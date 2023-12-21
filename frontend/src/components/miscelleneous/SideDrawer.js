@@ -25,8 +25,7 @@ import ProfileModal from "./ProfileModal";
 import { useNavigate } from "react-router-dom";
 import ChatLoading from "../ChatLoading";
 import UserListItem from "../userAvetar/UserListItem";
-import NotificationBadge from "react-notification-badge";
-import { Effect } from "react-notification-badge";
+import NotificationBadge, { Effect } from "react-notification-badge";
 import axios from "axios";
 import { getSender } from "../../config/ChatLogics";
 const SideDrawer = () => {
