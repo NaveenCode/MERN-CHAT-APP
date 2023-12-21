@@ -1,5 +1,5 @@
 const express = require("express");
-const dotenv = require("dotenv");
+require("dotenv").config();
 require("colors");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
@@ -10,7 +10,6 @@ const path = require("path");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 // const io = require("socket.io");
 const app = express();
-dotenv.config();
 connectDB();
 
 app.use(express.json());
@@ -29,10 +28,10 @@ app.use("/api/message", messageRoutes);
 const __dirname1 = path.resolve();
 // console.log(__dirname1);
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "../frontend/build")));
+  app.use(express.static(path.join(__dirname1, "./frontend/build")));
 
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname1, "../frontend", "build", "index.html"))
+    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
   );
 } else {
   app.get("/", (req, res) => {
