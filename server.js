@@ -5,7 +5,6 @@ const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
-const cors = require("cors");
 const path = require("path");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 // const io = require("socket.io");
@@ -13,12 +12,6 @@ const app = express();
 connectDB();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "PUT", "UPDATE", "DELETE"],
-  })
-);
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
