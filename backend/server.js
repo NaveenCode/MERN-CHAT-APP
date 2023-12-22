@@ -1,5 +1,5 @@
 const express = require("express");
-require("dotenv").config();
+require("dotenv").config({ path: ".env" });
 require("colors");
 const cors = require("cors");
 const connectDB = require("./config/db");
@@ -29,7 +29,7 @@ app.use("/api/message", messageRoutes);
 // --------------------------deployment------------------------------
 
 // const __dirname1 = path.resolve();
-console.log(__dirname);
+// console.log(__dirname);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "./frontend/build")));
 
