@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://the-real-chat-wnhk.onrender.com",
+      "https://the-real-chat-lnpb.onrender.com",
     ],
     methods: ["GET", "PUT", "UPDATE", "DELETE"],
   })
@@ -55,7 +55,7 @@ const io = require("socket.io")(server, {
   cors: {
     origin: [
       "http://localhost:3000",
-      "https://the-real-chat-wnhk.onrender.com",
+      "https://the-real-chat-lnpb.onrender.com",
     ],
   },
 });
