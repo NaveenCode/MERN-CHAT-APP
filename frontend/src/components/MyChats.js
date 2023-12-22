@@ -107,20 +107,6 @@ const MyChats = ({ fetchAgain }) => {
                     ? getSender(loggedUser, chat.users)
                     : chat.chatName}
                 </Text>
-                {/* {console.log(chat.latestMessage)} */}
-                {/* {chat.latestMessage && (
-                  <Text fontSize="xs">
-                    {chat.latestMessage.sender.name === loggedUser.name ? (
-                      <b>{"You-  "}</b>
-                    ) : (
-                      <b>{chat.latestMessage.sender.name}</b>
-                    )}
-
-                    {chat.latestMessage.content.length > 50
-                      ? chat.latestMessage.content.substring(0, 51) + "..."
-                      : " - " + chat.latestMessage.content}
-                  </Text>
-                )} */}
               </Box>
             ))}
           </Stack>
